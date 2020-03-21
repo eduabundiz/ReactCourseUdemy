@@ -4,29 +4,20 @@ import './App.css';
 import ReactDom from 'react-dom';
 
 class TarjetaFruta extends React.Component{
-  constructor(){
-    super()    
-    const METHODS =[
-      'agregar',
-      'quitar',
-      'limpiar'
-    ]
-    METHODS.forEach((method)=>{
-      this[method] = this[method].bind(this)
-    })
-    this.state = {
-      cantidad: 5
-    }
+
+  state = {
+    cantidad: 5
   }
-  agregar(){    
-    this.setState({cantidad:this.state.cantidad+1})    
-  }
-  quitar(){    
-    this.setState({cantidad:this.state.cantidad-1})    
-  }
-  limpiar(){    
-    this.setState({cantidad:0})    
-  }
+  agregar=()=>this.setState({    
+    cantidad:this.state.cantidad+1    
+    
+  })
+  quitar=()=>this.setState({    
+    cantidad:this.state.cantidad-1
+  })
+  limpiar =()=>this.setState({    
+    cantidad:0
+  })
   render(){
     return(
       <div>

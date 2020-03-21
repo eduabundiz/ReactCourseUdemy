@@ -2,37 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ReactDom from 'react-dom';
-
-class TarjetaFruta extends React.Component{
-
-  state = {
-    cantidad: 5
-  }
-  agregar=()=>this.setState({    
-    cantidad:this.state.cantidad+1    
-    
-  })
-  quitar=()=>this.setState({    
-    cantidad:this.state.cantidad-1
-  })
-  limpiar =()=>this.setState({    
-    cantidad:0
-  })
-  render(){
-    return(
-      <div>
-      <h3>
-        {this.props.name}                
-      </h3>
-    <div>Cantidad:{this.state.cantidad}</div>
-      <button onClick ={this.agregar}>+</button>
-      <button onClick ={this.quitar}>-</button>
-      <button onClick ={this.limpiar}>Limpiar</button>
-      <p>${this.props.price}</p>
-    </div>
-    );
-  }  
-}
+import TarjetaFruta from './Componentes/TarjetaFruta'
 
 
 const App = () =>(

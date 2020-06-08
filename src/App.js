@@ -8,30 +8,27 @@ import { render } from '@testing-library/react';
 
 class App extends React.Component{
   state ={
-    name:'',
-    email:''
+    tech:'Vue'
   }
-  actualizar = (name,text)=>{
+  handleChange = (event)=>{
     this.setState({
-      [name]:text
+      tech:event.target.value
     })
   }
   render(){
     return(
       <div>
-        <p>Inputs controlados</p>
-        <InputControlado 
-          name='name'
-          onChange={this.actualizar}
-          placeholder ='Nombre Completo'
-        />
-         <InputControlado 
-         name='email'
-          onChange={this.actualizar}
-          placeholder ='Tu Email'
-        />
-        <h2>Nombre {this.state.name}</h2>
-        <h2>Email {this.state.email}</h2>
+        <h1>Etiqueta Select</h1>
+        {this.state.tech}
+        <form>
+          <select value ={this.state.tech} onChange={this.handleChange}>
+            <option value="Angular">Angular</option>
+            <option value="React">React</option>
+            <option value="Vue">Vue</option>
+            <option value="Vanilla">Vanilla</option>
+            
+          </select>
+        </form>
       </div>  
     )
   }

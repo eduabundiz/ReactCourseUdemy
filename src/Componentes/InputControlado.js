@@ -18,6 +18,9 @@ class InputControlado extends Component{
         }
         this.setState({text,color})
 
+        //Propagando datos al padre
+        this.props.onChange(this.props.name,text)
+
     }
     render(){
         const styles = {
@@ -26,12 +29,17 @@ class InputControlado extends Component{
             outline: 'none'
         }
         return(
-            <input
-             type=""
-             value={this.state.text}
-             onChange = {this.actualizar}
-             style ={styles}
-             />
+            <p>
+                <label htmlFor='name'>{this.props.name}</label>
+                <input
+                id='name'
+                type=""
+                value={this.state.text}
+                onChange = {this.actualizar}
+                style ={styles}
+                placeholder = {this.props.placeholder}
+                />
+             </p>
 
         )
     }
